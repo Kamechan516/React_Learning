@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  web:
+    image: react:learning-web
+    container_name: React-Learning_Web
+    ports:
+      - "8800:443"
+    volumes:
+      - ./Docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./Docker/nginx/conf_dev:/etc/nginx/conf
+    networks:
+      - net
+  
+  app:
+    image: react:learning-app
+    container_name: React-Learning_App
+    volumes:
+      - ./src:/var/app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - web
+    command: yarn dev
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
