@@ -4,6 +4,7 @@ import { Code } from "@/components/Code";
 import { Title } from "@/components/Title";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import CodeStyles from "@/components/Code.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function Home() {
         <div className={styles.description}>
           <Code page="index" 
           >
-          <code className={styles.code}>pages/index.js</code>
+          <code className={CodeStyles.code}>pages/index.js</code>
           </Code>
           <div>
             <a
