@@ -5,8 +5,8 @@ import { Header } from "@/src/components/Header";
 import { Title } from "@/src/components/Title";
 import { Links } from "@/src/components/Links";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import CodeStyles from "@/components/Code.module.css";
+import styles from "@/src/styles/Home.module.css";
+import CodeStyles from "@/src/components/Code.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
