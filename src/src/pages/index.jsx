@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useCallback } from "react";
 import { Header } from "@/src/components/Header";
 import { Code } from "@/src/components/Code";
 import { Title } from "@/src/components/Title";
@@ -10,7 +11,21 @@ import CodeStyles from "@/src/components/Code.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// const handleClick = (e) => {
+//   console.log(e.target.href);
+//   e.preventDefault();
+// }
+
 export default function Home() {
+
+  const foo = "1";
+
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  }, []);
+
   return (
     <>
       <Head>
@@ -20,6 +35,13 @@ export default function Home() {
       </Head>
 
       <Header />
+
+      {/* <a
+      onClick={function() {
+        alert("ボタンがクリックされました");
+      }}>ボタン
+      </button> */}
+      <a href="/about" onClick={handleClick}>ボタン</a>
       
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
